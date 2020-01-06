@@ -33,9 +33,9 @@ class App extends Component {
 
   componentDidMount() {
     this.timer = setInterval(this.progress, 20);
-    // this.callApi()
-    //   .then(res => this.setState({customers: res}))
-    //   .catch(err => console.log(err));   
+    this.callApi()
+      .then(res => this.setState({customers: res}))
+      .catch(err => console.log(err));   
   }
 
   callApi = async () => {
@@ -66,7 +66,7 @@ class App extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.customers ? this.state.customers.map( c=> { return ( <Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job}/>) 
+              {this.state.customers ? this.state.customers.map( c=> { return ( <Customer key={c.id} id={c.id} image={c.image} name={c.NAME} birthday={c.birthday} gender={c.gender} job={c.job}/>) 
               }) :
               <TableRow>
                 <TableCell colSpan="6" align="center">
